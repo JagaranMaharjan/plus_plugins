@@ -51,7 +51,7 @@ internal class MethodCallHandlerImpl(
             build["tags"] = Build.TAGS
             build["type"] = Build.TYPE
             build["isPhysicalDevice"] = !isEmulator
-            build["systemFeatures"] = getSystemFeatures()
+//            build["systemFeatures"] = getSystemFeatures()
 
             val version: MutableMap<String, Any> = HashMap()
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -81,12 +81,12 @@ internal class MethodCallHandlerImpl(
         }
     }
 
-    private fun getSystemFeatures(): List<String> {
-        val featureInfos: Array<FeatureInfo> = packageManager.systemAvailableFeatures
-        return featureInfos
-            .filterNot { featureInfo -> featureInfo.name == null }
-            .map { featureInfo -> featureInfo.name }
-    }
+//    private fun getSystemFeatures(): List<String> {
+//        val featureInfos: Array<FeatureInfo> = packageManager.systemAvailableFeatures
+//        return featureInfos
+//            .filterNot { featureInfo -> featureInfo.name == null }
+//            .map { featureInfo -> featureInfo.name }
+//    }
 
     /**
      * A simple emulator-detection based on the flutter tools detection logic and a couple of legacy
